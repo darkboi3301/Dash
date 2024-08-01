@@ -20,12 +20,12 @@ const Sidebar = () => {
   }
 
   const Menus = [
-    { title: "Overview", src: "Overview", svg: overview },
-    { title: "Human Resources", src: "HumanResource", svg: human },
-    { title: "Finance", src: "Finance", svg: finance },
-    { title: "Placements", src: "Placements", svg: placements },
-    { title: "Strategic Projects", src: "StrategicProjects", svg: projects },
-    { title: "Settings", src: "Settings", svg: settings },
+    { title: "Overview", src: "Overview", svg: overview  , href: '/'},
+    { title: "Human Resources", src: "HumanResource", svg: human , href: '/dashboard/human-resources'},
+    { title: "Finance", src: "Finance", svg: finance , href: '/dashboard/finance'},
+    { title: "Placements", src: "Placements", svg: placements , href: '/dashboard/placements'},
+    { title: "Strategic Projects", src: "StrategicProjects", svg: projects , href: '/dashboard/strategic-projects'},
+    { title: "Settings", src: "Settings", svg: settings , href: '/dashboard/settings', gap: true }
   ];
   return (
     <div className=" flex hidden md:block">
@@ -55,16 +55,19 @@ const Sidebar = () => {
         <ul className=" pt-6">
           {
             Menus.map((Menu, index) => (
+              <a href={Menu.href}>
               <li
                 key={index}
                 className={`flex rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4  ${Menu.gap ? " mt-9" : " mt-2"} ${index === 0 && "bg - light - white"
                   } `}
               >
+                
                 <img src={Menu.svg} className="w-6" />
                 <span className={`${!open && "hidden"} origin - left duration - 200`}>
                   {Menu.title}
                 </span>
               </li>
+              </a>  
             ))}
         </ul>
       </div>

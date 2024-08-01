@@ -1,6 +1,8 @@
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
+import srmlogo from '../assets/srmlogo.png'
+
 const navigation = [
   { name: 'Dashboard', href: '#', current: true },
   { name: 'Team', href: '#', current: false },
@@ -15,7 +17,7 @@ function classNames(...classes) {
 export default function Example() {
   return (
     <Disclosure as="nav" className="bg-gray-800">
-      <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+      <div className="mx-auto px-0 md:mx-10 px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
             {/* Mobile menu button*/}
@@ -30,8 +32,8 @@ export default function Example() {
             <div className="flex flex-shrink-0 items-center">
               <img
                 alt="Your Company"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                className="h-8 w-auto"
+                src={srmlogo}
+                className="h-9 w-auto bg-white p-1 rounded-md"
               />
             </div>
             <div className="hidden sm:ml-6 sm:block">
@@ -115,7 +117,7 @@ export default function Example() {
             >
               {item.name}
             </DisclosureButton>
-          ))} 
+          ))}
         </div>
       </DisclosurePanel>
     </Disclosure>
