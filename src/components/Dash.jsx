@@ -49,21 +49,27 @@ const ctScoreData = [
 ];
 const Dashboard = () => {
   return (
-    <div className="flex h-screen overflow-hidden">
-      <Sidebar />
-      <div className="flex-1 flex flex-col p-4 overflow-auto ">
-        <div className="w-full flex flex-wrap gap-6 justify-around mb-8">
-          <PieChart title="Absent And OD" data={absentData} />
-          <PieChart title="Score Statisticss" data={scoreData} />
-          {/* <PieChart title="Internship Statistics" data={internshipData} /> */}
-          <LineChart title="Acquisition Cost" data={acquisitionData} />
+    <>
+
+      <div className="flex h-screen overflow-hidden">
+        <div className="z-index-50">
+          <Sidebar />
         </div>
-        <div className="w-full h-fit flex flex-wrap justify-between space-y-4 md:space-y-0 md:space-x-4">
-          <DataTable title="ATD Figures" />
-          <Barchart title="Average CT Score" />
+
+        <div className="flex-1 flex flex-col p-4 overflow-auto">
+          <div className="w-full flex flex-wrap gap-6 justify-around mb-8">
+            <PieChart title="Absent And OD" data={absentData} />
+            <PieChart title="Score Statisticss" data={scoreData} />
+            {/* <PieChart title="Internship Statistics" data={internshipData} /> */}
+            <LineChart title="Acquisition Cost" data={acquisitionData} />
+          </div>
+          <div className="w-full h-fit flex flex-wrap justify-between space-y-4 md:space-y-0 md:space-x-4">
+            <DataTable title="ATD Figures" />
+            <Barchart title="Average CT Score" />
+          </div>
         </div>
-      </div>
-    </div>
+      </div >
+    </>
   );
 };
 
