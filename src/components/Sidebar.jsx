@@ -25,6 +25,7 @@ const Sidebar = () => {
     { title: "Finance", src: "Finance", svg: finance , href: '/dashboard/finance'},
     { title: "Placements", src: "Placements", svg: placements , href: '/dashboard/placements'},
     { title: "Strategic Projects", src: "StrategicProjects", svg: projects , href: '/dashboard/strategic-projects'},
+    { title: "Research", src: "Research", svg: overview , href: '/dashboard/research'},
     { title: "Settings", src: "Settings", svg: settings , href: '/dashboard/settings', gap: true }
   ];
   return (
